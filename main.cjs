@@ -5,37 +5,19 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const lineLength = 2;
-const lines = [];
+let testCount = null;
+const tests = [];
 rl.on("line", (line) => {
-  lines.push(line);
-  if (lines.length === lineLength) {
-    const result = parse(lines);
-    console.log(result);
-    process.exit();
+  if (testCount === null) {
+    testCount = Number(line.trim());
+  } else {
+    tests.push(line.trim().split(" ").map(Number));
+    if (tests.length === testCount) {
+      const result = solve();
+      console.log(result);
+      process.exit();
+    }
   }
 });
 
-function parse(lines) {
-  const [n, k] = lines[0].trim().split(" ").map(Number);
-  const as = lines[1].trim().split(" ").map(Number);
-  if (as.length !== n) {
-    throw new Error();
-  }
-  return solve(n, k, as);
-}
-
-function solve(n, k, as) {
-  let r = 0;
-  let i = 0;
-  while (true) {
-    i += k;
-    r++;
-    if (i >= as.length) {
-      break;
-    }
-
-    i--;
-  }
-  return r;
-}
+function solve() {}
