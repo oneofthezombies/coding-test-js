@@ -10,15 +10,22 @@ const lines = [];
 rl.on("line", (line) => {
   lines.push(line);
   if (lines.length === lineLength) {
-    const result = solve(lines);
+    const result = parse(lines);
     console.log(result);
     process.exit();
   }
 });
 
-function solve(lines) {
+function parse(lines) {
   const [n, k] = lines[0].trim().split(" ").map(Number);
   const as = lines[1].trim().split(" ").map(Number);
+  if (as.length !== n) {
+    throw new Error();
+  }
+  return solve(n, k, as);
+}
+
+function solve(n, k, as) {
   let r = 0;
   let i = 0;
   while (true) {
