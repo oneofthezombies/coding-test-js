@@ -1,0 +1,10 @@
+{
+  "name": "coding-test",
+  "version": "0.0.0",
+  "description": "Repository for coding tests",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {},
+  "author": "oneofthezombies",
+  "license": "MIT"
+}
