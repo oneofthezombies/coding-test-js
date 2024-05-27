@@ -2,9 +2,12 @@
   "name": "coding-test",
   "version": "0.0.0",
   "description": "Repository for coding tests",
-  "main": "main.js",
   "type": "commonjs",
-  "scripts": {},
   "author": "oneofthezombies",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
+  }
 }
